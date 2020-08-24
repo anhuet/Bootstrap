@@ -1,0 +1,129 @@
+extends ../layouts/default-layout.pug
+block content
+  mixin iconItem(title,p)
+    .col-lg-4
+      .features-icons-item.mx-auto.mb-0.mb-lg-3
+        .features-icons-icon.d-flex
+          i.i.fa.fa-book.m-auto.text-dark
+        h3= title
+        p.lead.mb-0= p
+    mixin showCaseEven(src,title,p)
+      section
+        .container
+          .row.align-items-center
+            .col-lg-6.order-lg-1
+              .p-5
+                img.img-fluid.rounded-circle(src= src, alt='')
+            .col-lg-6.order-lg-2
+              .p-5
+                h2.display-4= title
+                p= p
+      section
+    mixin showCase(src,title,p)
+      section
+        .container
+          .row.align-items-center
+            .col-lg-6.order-lg-2
+              .p-5
+                img.img-fluid.rounded-circle(src= src, alt='')
+            .col-lg-6.order-lg-1
+              .p-5
+                h2.display-4= title
+                p= p
+      section
+    mixin people(src,tile,p)
+      .col-lg-4
+        .testimonial-item.mx-auto.mb-5.mb-lg-0
+          img.img-fluid.rounded-circle.mb-3(src= src, alt='')
+          h5= tile
+          p.font-weight-light.mb-0= p
+  // Slider
+  #slides.carousel.slide(data-ride='carousel')
+    ul.carousel-indicators
+      li.active(data-target='#slides', data-slide-to='0')
+      li(data-target='#slides', data-slide-to='1')
+      li(data-target='#slides', data-slide-to='2')
+    .carousel-inner
+      .carousel-item.active
+        img(src='assets/images/1.jpg', alt='')
+        .carousel-caption
+          h1.display-2 Bootstrap
+          button.btn.btn-outline-light.btn-lg(type='button')
+            | View Demo
+          button.btn.btn-primary.btn-lg(type='button')
+            | Get Started
+      .carousel-item
+        img(src='assets/images/2.jpg', alt='')
+      .carousel-item
+        img(src=src='assets/images/3.jpg', alt='')
+
+
+  // Icons Grid
+  section.features-icons.bg-light.text-center
+    .container
+      .row
+        +iconItem("Bootstrap 4 Ready","Featuring the latest build of the new Bootstrap 4 framework!")
+        +iconItem("Easy to Use","Ready to use with your own content, or customize the source files!")
+        +iconItem("Css3 ","Ready to use with your own content, or customize the source files!")
+        
+  // Image Showcases
+  +showCaseEven("../assets/images/bg-showcase-1.jpg","For those about to tutorial","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.")
+  +showCase("../assets/images/bg-showcase-2.jpg","About this tutorial","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.")
+  +showCaseEven("../assets/images/bg-showcase-3.jpg","Do something special","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.")
+  +showCase("../assets/images/bg-showcase-2.jpg","About this tutorial","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.")
+  // Project
+  section#portfolio.content-section
+    .container
+      .content-section-heading.text-center
+        h2.mb-5 Recent Projects
+      .row.no-gutters
+        .col-lg-6
+          a.portfolio-item(href='#!')
+            .caption
+              .caption-content
+                h3 Project1
+               
+            img.img-fluid(src='assets/images/2.jpg', alt='')
+        .col-lg-6
+          a.portfolio-item(href='#!')
+            .caption
+              .caption-content
+                h3 Projec2
+            img.img-fluid(src='assets/images/1.jpg', alt='')
+
+
+  // Testimonials
+  section.testimonials.text-center.bg-light
+    .container
+      h2.mb-5 What people are saying...
+      .row
+        +people("assets/images/2.jpg","Afa","Bootstrap is amazing. I've been using it to create lots of super nice landing pages.")
+        +people("assets/images/3.jpg","Beta","Bootstrap is amazing. I've been using it to create lots of super nice landing pages.")
+        +people("assets/images/1.jpg","Landa","Bootstrap is amazing. I've been using it to create lots of super nice landing pages.")
+        
+  // Call to Action
+  section.call-to-action.text-white.text-center
+    .overlay
+    .container
+      .row
+        .col-xl-9.mx-auto
+          h2.mb-4 Ready to get started? Sign up now!
+        .col-md-10.col-lg-8.col-xl-7.mx-auto
+          form
+            .form-row
+              .col-12.col-md-9.mb-2.mb-md-0
+                input.form-control.form-control-lg(type='email', placeholder='Enter your email...')
+              .col-12.col-md-3
+                button.btn.btn-block.btn-lg.btn-primary(type='submit') Sign up!
+
+
+  
+
+
+
+
+
+
+
+
+
